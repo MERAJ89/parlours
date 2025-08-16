@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Parlour - Beauty & Bridal Services</title>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<nav class="navbar">
+		<div class="logo">Parlour</div>
+		<ul class="nav-links">
+			<li><a href="#about">About</a></li>
+			<li><a href="#services">Services</a></li>
+			<li><a href="#gallery">Gallery</a></li>
+			<li><a href="#contact">Contact Us</a></li>
+		</ul>
+		<div class="hamburger" onclick="toggleNavbar()">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</nav>
+	<header>
+		<h1>MakeOver Studio <br>
+			<h4>By Spark</h4>
+			<h3>Salon For Ladies & Academy</h3>
+		</h1>
+		<p class="subtitle">----Where Beauty Meets Perfection----<strong>SPA MAKEUP HAIR SKIN</strong> </p>
+
+	</header>
+
+	<div class="banner-wrapper">
+		<img src="banner.jpg" alt="Parlour Banner" class="banner-img">
+	</div>
+
+	<main>
+
+
+		<section id="services" class="services" style="scroll-margin-top: 90px;">
+			<div class="service-card" onclick="toggleDetails(this)">
+				<div class="service-icon">🧖‍♀️</div>
+				<div class="service-title">Spa Services</div>
+				<div class="service-details">
+					<strong>Spa Services:</strong> <br>
+					Relax and rejuvenate with our luxurious spa treatments! From soothing facials to invigorating
+					massages, our spa experts use premium products and techniques to refresh your mind and body.
+					Experience tranquility and personalized care in a serene environment.
+				</div>
+			</div>
+
+			<div class="service-card" onclick="toggleDetails(this)">
+				<div class="service-icon">💇‍♀️</div>
+				<div class="service-title">Hair Services</div>
+				<div class="service-details">
+					<strong>Hair Services:</strong> <br>
+					From trendy haircuts to vibrant coloring, our stylists bring your hair dreams to life. We use
+					premium products and the latest techniques for healthy, beautiful hair. Personalized consultations
+					for every client.
+				</div>
+			</div>
+
+			<div class="service-card" onclick="toggleDetails(this)">
+				<div class="service-icon">💄</div>
+				<div class="service-title">Makeup Services</div>
+				<div class="service-details">
+					<strong>Makeup Services:</strong> <br>
+					Whether it's a party, wedding, or casual outing, our makeup artists enhance your natural beauty. We
+					offer custom looks, skin-friendly products, and expert tips for a radiant finish every time.
+				</div>
+			</div>
+
+			<div class="service-card" onclick="toggleDetails(this)">
+				<div class="service-icon">🧴</div>
+				<div class="service-title">Skin Care Service</div>
+				<div class="service-details">
+					<strong>Skin Care Service:</strong> <br>
+					Reveal your best skin with our expert skin care treatments! We offer deep cleansing, hydrating
+					facials, anti-aging solutions, and personalized regimens for every skin type. Our professionals use
+					advanced techniques and quality products to help you achieve a healthy, glowing complexion.
+				</div>
+			</div>
+		</section>
+
+		<section id="about" style="scroll-margin-top: 90px;">
+			<h2 style="text-align:center;color:#d72660;">About Us</h2>
+			<p style="max-width:700px;margin:0 auto 2rem auto;text-align:center;color:#6c567b;font-size:1.15rem;">
+				Welcome to Parlour, your destination for beauty and elegance. We specialize in bridal, hair, and makeup
+				services, ensuring every client feels special and pampered. Our team is passionate about creating
+				unforgettable experiences tailored to your unique style.
+			</p>
+		</section>
+
+		<section id="gallery" style="scroll-margin-top: 90px;">
+			<h2 style="text-align:center;color:#d72660;">Gallery</h2>
+			<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;">
+				<img src="spa.jpg" alt="Bridal"
+					style="width:220px;height:160px;border-radius:1rem;box-shadow:0 4px 16px #d7266022;object-fit:cover;">
+				<img src="meckup.jpg" alt="Hair"
+					style="width:220px;height:160px;border-radius:1rem;box-shadow:0 4px 16px #d7266022;object-fit:cover;">
+				<img src="meckup2.jpg" alt="Makeup"
+					style="width:220px;height:160px;border-radius:1rem;box-shadow:0 4px 16px #d7266022;object-fit:cover;">
+
+				<img src="hair styles.jpg" alt="Makeup"
+					style="width:220px;height:160px;border-radius:1rem;box-shadow:0 4px 16px #d7266022;object-fit:cover;">
+
+				<img src="skin care.jpg" alt="Makeup"
+					style="width:220px;height:160px;border-radius:1rem;box-shadow:0 4px 16px #d7266022;object-fit:cover;">
+			</div>
+		</section>
+
+		<section id="contact" style="scroll-margin-top: 90px;">
+			<h2 style="text-align:center;color:#d72660;">Contact Us</h2>
+			<form
+				style="max-width:400px;margin:0 auto;text-align:left;background:#fff;padding:1.5rem 1rem;border-radius:1rem;box-shadow:0 4px 16px #d7266011;">
+				<label for="name" style="color:#6c567b;font-weight:600;">Name</label><br>
+				<input type="text" id="name" name="name"
+					style="width:100%;padding:0.5rem;margin-bottom:1rem;border-radius:0.5rem;border:1px solid #fae3d9;">
+
+				<label for="contact" style="color:#6c567b;font-weight:600;">Contact Number</label><br>
+				<input type="tel" id="contact" name="contact"
+					style="width:100%;padding:0.5rem;margin-bottom:1rem;border-radius:0.5rem;border:1px solid #fae3d9;" pattern="[0-9]{10}" placeholder="Enter your contact number">
+
+				<label for="message" style="color:#6c567b;font-weight:600;">Message</label><br>
+				<textarea id="message" name="message" rows="3"
+					style="width:100%;padding:0.5rem;border-radius:0.5rem;border:1px solid #fae3d9;"></textarea>
+
+				<button type="submit"
+					style="margin-top:1rem;background:#d72660;color:#fff;padding:0.7rem 1.5rem;border:none;border-radius:0.5rem;cursor:pointer;font-weight:700;">Send</button>
+			</form>
+		</section>
+	</main>
+
+	<footer>
+		&copy; 2025 Parlour | Designed with love and creativity
+	</footer>
+	<a href="https://wa.me/919905647286" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+		<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
+			style="width:48px;height:48px;">
+	</a>
+
+	<script src="script.js"></script>
+</body>
+
+</html>
