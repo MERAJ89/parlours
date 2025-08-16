@@ -29,7 +29,7 @@
 			<h4>By Spark</h4>
 			<h3>Salon For Ladies & Academy</h3>
 		</h1>
-		<p class="subtitle">----Where Beauty Meets Perfection----<strong>SPA MAKEUP HAIR SKIN</strong> </p>
+		<p class="subtitle">Where Beauty Meets Perfection <br> <strong>SPA MAKEUP HAIR SKIN</strong> </p>
 
 	</header>
 
@@ -114,18 +114,19 @@
 
 		<section id="contact" style="scroll-margin-top: 90px;">
 			<h2 style="text-align:center;color:#d72660;">Contact Us</h2>
-			<form
+			<form id="contactForm"
 				style="max-width:400px;margin:0 auto;text-align:left;background:#fff;padding:1.5rem 1rem;border-radius:1rem;box-shadow:0 4px 16px #d7266011;">
 				<label for="name" style="color:#6c567b;font-weight:600;">Name</label><br>
-				<input type="text" id="name" name="name"
+				<input type="text" id="name" name="name" autocomplete="name"
 					style="width:100%;padding:0.5rem;margin-bottom:1rem;border-radius:0.5rem;border:1px solid #fae3d9;">
 
 				<label for="contact" style="color:#6c567b;font-weight:600;">Contact Number</label><br>
-				<input type="tel" id="contact" name="contact"
-					style="width:100%;padding:0.5rem;margin-bottom:1rem;border-radius:0.5rem;border:1px solid #fae3d9;" pattern="[0-9]{10}" placeholder="Enter your contact number">
+				<input type="tel" id="contact" name="contact" autocomplete="tel"
+					style="width:100%;padding:0.5rem;margin-bottom:1rem;border-radius:0.5rem;border:1px solid #fae3d9;"
+					pattern="[0-9]{10}" placeholder="Enter your contact number">
 
 				<label for="message" style="color:#6c567b;font-weight:600;">Message</label><br>
-				<textarea id="message" name="message" rows="3"
+				<textarea id="message" name="message" rows="3" autocomplete="off"
 					style="width:100%;padding:0.5rem;border-radius:0.5rem;border:1px solid #fae3d9;"></textarea>
 
 				<button type="submit"
@@ -143,6 +144,28 @@
 	</a>
 
 	<script src="script.js"></script>
+
+	<script>
+		const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxdiDiiuHDa33lPtxHQWXbCVnwF3ty8qS5gUGrXpyjdxz60znLWd2t2twEXGgokZWvRrA/exec';
+		document.getElementById('contactForm').addEventListener('submit', function (e) {
+			e.preventDefault();
+			fetch(GOOGLE_SCRIPT_URL, {
+				method: 'POST',
+				body: JSON.stringify({
+					name: document.getElementById('name').value,
+					contact: document.getElementById('contact').value,
+					message: document.getElementById('message').value
+				}),
+				headers: { 'Content-Type': 'application/json' }
+			})
+				.then(res => res.text())
+				.then(response => {
+					alert('Query submitted!');
+					document.getElementById('contactForm').reset();
+				})
+				.catch((err) => alert('Submission failed. ' + err));
+		});
+	</script>
 </body>
 
 </html>
